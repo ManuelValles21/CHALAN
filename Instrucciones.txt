@@ -1,0 +1,8 @@
+1- ejecutar el comando source install/setup.bash en almenos 5 terminales
+2- en una terminal ejecutar ros2 launch CHALAN launch_sim.launch.py world:=./src/CHALAN/worlds/mundocorto.world 
+3- en la segunda ejecutar rviz2
+4- en la tercera ejecutar ros2 launch slam_toolbox online_async_launch.py slam_params_file:=./src/CHALAN/config/mapper_params_online_async.yaml use_sim_time:=true
+5-en la cuarta ejecutar ros2 run twist_mux twist_mux --ros-args --params-file ./src/CHALAN/config/twist_mux.yaml -r cmd_vel_out:=diff_cont/cmd_vel_unstamped
+6- en la quinta ejecutar ros2 launch nav2_bringup navigation_launch.py use_sim_time:=true
+7- y si se requieren mas comandos como la teleoperacion, ejecutar si es necesario en otras terminales
+
